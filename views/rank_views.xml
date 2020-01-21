@@ -1,0 +1,38 @@
+<odoo>
+  <data>
+    <!-- course definitions -->
+    <record model="ir.ui.view" id="rank_search_view">
+      <field name="name">rank.search</field>
+      <field name="model">mymodule.rank</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="rank_name"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="rank_tree_view">
+      <field name="name">rank.tree</field>
+      <field name="model">mymodule.rank</field>
+      <field name="arch" type="xml">
+        <tree string="Rank Tree" editable="top">
+          <field name="rank_name"/>    
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="rank_tree_action">
+      <field name="name">Ranks</field>
+      <field name="res_model">mymodule.rank</field>
+      <field name="view_mode">tree</field>
+    </record>
+    
+    <!-- actions -->
+    
+    <menuitem name="Ranks" id="ranks_menu" parent="mymodule_menu"
+              action="rank_tree_action"/>
+    
+
+  </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mymodule_soldier_base,soldier base user,model_mymodule_soldier,base.group_user,1,1,1,1
+mymodule_rank_base,rank base user,model_mymodule_rank,base.group_user,1,1,1,1

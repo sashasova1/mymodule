@@ -1,0 +1,6 @@
+<odoo>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="My Module" id="mymodule_menu" />
+    </data>
+</odoo>

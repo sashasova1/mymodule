@@ -1,0 +1,71 @@
+<odoo>
+  <data>
+    <!-- course definitions -->
+    <record model="ir.ui.view" id="soldier_form_view">
+        <field name="name">soldier.form</field>
+        <field name="model">mymodule.soldier</field>
+        <field name="arch" type="xml">
+          <form string="Soldier Form">
+            <sheet>
+              <group>
+                <field name="full_name"/>
+                <field name="birthdate"/>
+                <field name="rank_id"/>
+              </group>             
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="soldier_search_view">
+      <field name="name">soldier.search</field>
+      <field name="model">mymodule.soldier</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="full_name"/>          
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="soldier_tree_view">
+      <field name="name">soldier.tree</field>
+      <field name="model">mymodule.soldier</field>
+      <field name="arch" type="xml">
+        <tree string="Soldier Tree">
+          <field name="full_name"/>   
+          <field name="birthdate"/>
+          <field name="rank_id"/>       
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="soldier_list_action">
+      <field name="name">Soldiers</field>
+      <field name="res_model">mymodule.soldier</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="openacademy.action_server">
+      <field name="name">openacademy server</field>
+      <field name="model_id" ref="model_openacademy_openacademy"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- actions -->
+    
+    <menuitem name="Soldiers" id="soldiers_menu" parent="mymodule_menu"
+              action="soldier_list_action"/>
+    
+
+  </data>
+</odoo>
